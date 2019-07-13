@@ -1,0 +1,2 @@
+# magicspells
+Team Competitive Programming
