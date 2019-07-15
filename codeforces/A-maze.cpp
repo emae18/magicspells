@@ -2,25 +2,21 @@
 using namespace std;
 map <int, vector<int> > g;
 bool visited[250001];
-bool marcado[250001];
 int n,m,k,c;
 char matriz[500][500];
 map<int,pair<int,int> > pos;
 vector<int> a;
 void dfs(int x) {
     visited[x] = true;
-    //int sum=1;
     a.push_back(x);
     for(int y: g[x])
-        if(!visited[y]) //sum=sum+dfs(y);
+        if(!visited[y])
             dfs(y);
-    //if(c-sum <= k) matriz[pos[x].first][pos[x].second]='X';
-    //return sum;
 }
 int main()
 {
     ios::sync_with_stdio(0);
-    //cin.tie(0);
+    cin.tie(0);
     cin>>n>>m>>k;
     int cont=0;
     int nodo;
@@ -59,7 +55,6 @@ int main()
             }
         }
     }
-    //int vertexes = g.size();
     dfs(g.begin()->first);
     for(vector<int>::reverse_iterator it = a.rbegin();it!=a.rend() && k>0; it++)
     {
